@@ -16,6 +16,12 @@ app.use(cors({
 // Line 10 to 14 is used to connect frontend with backend
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
+app.get("/", (req, res)=> {
+    res.json({
+        success:true,
+        message: "YOU HAVE DONE IT FINNALY",
+    });
+});
 app.use ("/api/v1/message", messageRouter);
 dbConnection();
 
